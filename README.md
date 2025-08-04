@@ -92,7 +92,7 @@ This script operates through a sequence of checks and actions to ensure your val
       * To communicate with Discord's API, it needs a temporary `session_id`. It connects to Discord's real-time Gateway (via WebSocket) and identifies itself using your token to receive this ID. The ID is then cached in `faucet/session.json` for future use.
       * Finally, it sends an HTTP POST request to Discord's API, simulating the `/claim` slash command in the official PWR Discord channel, which requests faucet funds for your validator address.
         > **⚠️ Important:**  
-        > I take no responsibility for any actions taken against your account for using these selfbots or how users use my open-source code.  
+        > I take no responsibility for any actions taken against your account for using these script or how users use my open-source code.  
         > Using this on a user account is prohibited by the [Discord TOS](https://discord.com/terms) and can lead to your account getting banned in very rare cases.
 
 -----
