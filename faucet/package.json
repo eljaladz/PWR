@@ -1,0 +1,32 @@
+{
+  "name": "pwr-faucet-autoclaim",
+  "version": "1.0.0",
+  "description": "Simple javascript for claiming PWR faucet from discord bot",
+  "main": "faucet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eljaladz/PWR.git"
+  },
+  "keywords": [
+    "pwr",
+    "validator",
+    "node",
+    "faucet",
+    "discord"
+  ],
+  "author": "eljaladz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eljaladz/PWR/issues"
+  },
+  "homepage": "https://github.com/eljaladz/PWR#readme",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
+    "form-data": "^4.0.4",
+    "ws": "^8.18.3"
+  }
+}
