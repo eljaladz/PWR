@@ -16,7 +16,7 @@ This script is an all-in-one solution for monitoring, maintaining, and managing 
 -----
 
 ## 1\. 💻 System Requirements
-
+  - **Full Guide:** [PWR-Validator official repository.](https://github.com/pwrlabs/PWR-Validator/blob/main/README.md)
   - **OS:** A Debian-based Linux distribution (like Ubuntu) is recommended, as the script uses `apt-get` for dependency installation.
   - **Shell:** `bash`
   - **Required Packages:**
