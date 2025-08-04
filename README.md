@@ -45,6 +45,7 @@ For the script to function correctly, you must place its files inside your main 
 ├── config.json        # (Will be downloaded by the script)
 ├── blocks/            # (Created automatically)
 ├── merkleTree/        # (Created automatically)
+├── log.out            # (Created automatically)
 ├── pwr.sh             # The main monitoring script
 ├── .env               # (You will create this file)
 └── faucet/            # <-- Directory for the faucet claimer script
