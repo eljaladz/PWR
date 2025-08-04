@@ -197,6 +197,6 @@ You're fully responsible for any actions taken using this tool. Understand the r
 
 ## 📜 **License**
 
-This project is licensed under the [MIT License](https://github.com/eljaladz/PWR/blob/main/LICENSE).
+This project is licensed under the [MIT License](https://opensource.org/license/mit).
 
 **Enjoy your automated and smoothly running PWR Validator\! 🎉**
