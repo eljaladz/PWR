@@ -130,6 +130,8 @@ The script uses a `.env` file to store your sensitive information. The first tim
     # This is only needed for automatic faucet claims after a network reset.
     DISCORD_TOKEN=your_discord_auth_token_here
     ```
+    
+    > [How to get Discord Token](https://t.me/NoDropsChat/4297)
 
 ### Step 3: Set Up Crontab for Automation ⏰
 
