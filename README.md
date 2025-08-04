@@ -132,7 +132,7 @@ The script uses a `.env` file to store your sensitive information. The first tim
     DISCORD_TOKEN=your_discord_auth_token_here
     ```
     
-    > [Create your own Telegram Bot](t.me/BotFather)
+    > [Create your own Telegram Bot](t.me/BotFather). \
     > [How to get Discord Token](https://t.me/NoDropsChat/4297)
 
 ### Step 3: Set Up Crontab for Automation ⏰
