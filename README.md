@@ -174,7 +174,7 @@ Here are the aliases that will be available:
 | `pwrrestart`| Manually runs the `pwr.sh` script to check status and restart if needed. |
 | `pwrblock`  | Shows only the "Block created" lines from the log.                   |
 | `pwraddress`| Displays your validator's public address.                            |
-| `pwrseed`   | Displays your validator's seed phrase.                               |
+| `pwrmnemonic`   | Displays your validator's seed phrase.                               |
 
 -----
 
