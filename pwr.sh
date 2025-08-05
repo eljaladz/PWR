@@ -129,7 +129,7 @@ Attempting to restart validator with IP: \`$PUBLIC_IP\`"
   # Forcefully stop any running Java processes to ensure a clean start.
   sudo pkill java || echo "[INFO] No running Java process to kill."
   sleep 5
-  sudo pkill -9 java
+  sudo pkill -9 java || true
 
   # Clear the log file for the new session.
   echo "[INFO] Cleaning log file..."
@@ -362,7 +362,7 @@ perform_update() {
   echo "[INFO] Stopping current validator process..."
   sudo pkill java || echo "[INFO] No running Java process to kill."
   sleep 5
-  sudo pkill -9 java
+  sudo pkill -9 java || true
 
   # If it's a network reset, delete data and optionally claim from faucet.
   if [ "$is_reset" = true ]; then
