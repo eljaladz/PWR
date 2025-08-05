@@ -474,8 +474,8 @@ check_validator_status() {
   local latest_local_block
   latest_local_block=$(get_latest_synced_block)
 
-  # Trigger a reset if local block is more than 25 blocks ahead of the network.
-  if [[ "$latest_global_block_height" -gt 0 && "$latest_local_block" -gt $((latest_global_block_height + 25)) ]]; then
+  # Trigger a reset if local block is more than 500 blocks ahead of the network.
+  if [[ "$latest_global_block_height" -gt 0 && "$latest_local_block" -gt $((latest_global_block_height + 500)) ]]; then
       echo "[CRITICAL] Network reset detected! Local: ${latest_local_block}, Network: ${latest_global_block_height}."
       send_telegram "🚨 *Network Reset Detected!* 🚨
 Your node at block \`${latest_local_block}\` is ahead of network block \`${latest_global_block_height}\`.
