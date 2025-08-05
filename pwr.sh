@@ -113,7 +113,7 @@ send_telegram() {
       echo "[ERROR] 'curl' is not installed, cannot send Telegram message." >&2
       return 1
   fi
-  # Send the message with disable_web_page_preview=true to prevent link previews.
+  
   curl -s -X POST "$TELEGRAM_API" \
         -d chat_id="$CHAT_ID" \
         -d parse_mode="Markdown" \
@@ -186,7 +186,7 @@ alias pwrstop='sudo pkill java && sleep 5 && sudo pkill -9 java'
 alias pwrrestart='(cd "${PWR_DIR}" && ./"$(basename "${BASH_SOURCE[0]}")")'
 alias pwrblock='grep "Block created" "${PWR_DIR}/log.out"'
 alias pwraddress='(cd "${PWR_DIR}" && sudo java -jar validator.jar get-address password)'
-alias pwrseed='(cd "${PWR_DIR}" && sudo java -jar validator.jar get-seed-phrase password)'
+alias pwrmnemonic='(cd "${PWR_DIR}" && sudo java -jar validator.jar get-seed-phrase password)'
 ${END_ALIAS_MARKER}
 EOL
 
@@ -614,9 +614,19 @@ ${version_status_message}
 
   # If status is standby and an update wasn't just performed, restart proactively.
   if [[ "$status" == "standby" ]] && [[ "$update_code" -ne 10 ]]; then
-    echo "[WARN] Validator is in STANDBY. Initiating a proactive restart."
-    send_telegram "ℹ️ Validator is in STANDBY. Initiating a proactive restart."
-    restart_validator
+    echo "[INFO] Validator is in STANDBY. Checking for sync activity before deciding to restart."
+    if is_node_actively_syncing; then
+        echo "[INFO] Standby node is actively syncing blocks. No action needed."
+        local current_block=$(get_latest_synced_block)
+        send_telegram "ℹ️ *Standby Node is Syncing*
+The node is in standby but is actively catching up.
+Current Block: \`${current_block}\`"
+    else
+        echo "[WARN] Standby node is not syncing. Initiating a proactive restart."
+        send_telegram "⚠️ *Stalled Standby Node*
+Validator is in STANDBY but not syncing. Initiating a proactive restart."
+        restart_validator
+    fi
   fi
 }
 
